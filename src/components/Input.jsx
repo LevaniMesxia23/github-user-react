@@ -6,7 +6,7 @@ export default function Input() {
   return (
     <Container>
       <img src={Search} alt="" />
-      <input type="text" />
+      <input type="text" placeholder="Search GitHub username…"/>
       <button>Search</button>
     </Container>
   );
@@ -33,8 +33,16 @@ const Container = styled.div`
     background: #fefefe;
     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
     border: none;
+    padding-left: 5rem;
 
-    color: #4b6a9b;
+    color: #4B6A9B;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5625rem;
+  }
+  input::placeholder{
+    color: #4B6A9B;
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
@@ -57,5 +65,6 @@ const Container = styled.div`
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    cursor: pointer;
   }
 `;

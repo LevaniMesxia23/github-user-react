@@ -3,6 +3,7 @@ import LightToggle from "./components/LightToggle";
 import styled from "styled-components";
 import { GlobalStyle } from "./styles/GlobalStyles";
 import Input from "./components/Input";
+import MainContainer from "./components/MainContainer";
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
         <LightToggle />
       </Header>
       <Input />
+      <MainContainer>
+        
+      </MainContainer>
     </>
   );
 }

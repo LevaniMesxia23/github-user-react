@@ -33,11 +33,13 @@ const Header = styled.div`
       font-weight: 700;
       line-height: normal;
       letter-spacing: 0.15625rem;
+      cursor: pointer;
     }
 
     img {
       width: 1.25rem;
       height: 1.25rem;
+      cursor: pointer;
     }
   }
 `;

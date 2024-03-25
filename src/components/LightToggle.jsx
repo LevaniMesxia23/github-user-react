@@ -1,14 +1,17 @@
 import React from "react";
 import Moon from "../../public/images/icon-moon.svg";
+import Sun from "../../public/images/icon-sun.svg";
 import styled from "styled-components";
+import { useState } from "react";
 
 export default function LightToggle() {
+  const [isClicked, setisClicked] = useState(false)
   return (
     <Header>
       <p>devfinder</p>
-      <div>
-        <span>Dark</span>
-        <img src={Moon} alt="" />
+      <div onClick={() => setisClicked(!isClicked)}>
+        <span>{isClicked ? "Light" : "Dark"}</span>
+        <img src={isClicked ? Sun : Moon} alt="" />
       </div>
     </Header>
   );

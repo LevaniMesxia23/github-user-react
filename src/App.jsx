@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { GlobalStyle } from "./styles/GlobalStyles";
 import Input from "./components/Input";
 import ContainersHeader from "./components/ContainersHeader";
+import InformationBox from "./components/InformationBox";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
 
       <Container>
         <ContainersHeader />
+        <InformationBox />
       </Container>
     </>
   );

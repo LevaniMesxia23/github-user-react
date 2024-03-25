@@ -37,6 +37,9 @@ const Container = styled.div`
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
   margin-top: 1.5rem;
   padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 `;
 
 export default App;

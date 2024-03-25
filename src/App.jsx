@@ -2,6 +2,7 @@ import { useState } from "react";
 import LightToggle from "./components/LightToggle";
 import styled from "styled-components";
 import { GlobalStyle } from "./styles/GlobalStyles";
+import Input from "./components/Input";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header>
         <LightToggle />
       </Header>
+      <Input />
     </>
   );
 }

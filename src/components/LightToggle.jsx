@@ -18,7 +18,7 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 32.75rem;
+  gap: 29.9rem;
 
   div {
     display: flex;

@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function LightToggle() {
   return (
     <Header>
-      <h1>devfinder</h1>
+      <p>devfinder</p>
       <div>
         <span>Dark</span>
         <img src={Moon} alt="" />
@@ -18,7 +18,15 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 29.9rem;
+  gap: 31.5rem;
+
+  p {
+    color: #222731;
+    font-size: 1.625rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
 
   div {
     display: flex;

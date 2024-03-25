@@ -8,13 +8,4 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
-  body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: "Space Mono", monospace;
-    background: #F6F8FF;
-  }
 `;

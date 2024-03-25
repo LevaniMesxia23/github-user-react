@@ -4,8 +4,7 @@ import Sun from "../../public/images/icon-sun.svg";
 import styled from "styled-components";
 import { useState } from "react";
 
-export default function LightToggle() {
-  const [isClicked, setisClicked] = useState(false)
+export default function LightToggle({isClicked, setisClicked}) {
   return (
     <Header>
       <p>devfinder</p>
@@ -16,6 +15,7 @@ export default function LightToggle() {
     </Header>
   );
 }
+
 
 const Header = styled.div`
   display: flex;

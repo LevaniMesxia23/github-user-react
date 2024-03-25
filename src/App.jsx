@@ -8,22 +8,36 @@ import InformationBox from "./components/InformationBox";
 import PrivateInformation from "./components/PrivateInformation";
 
 function App() {
+  const [isClicked, setisClicked] = useState(false);
+
   return (
     <>
-      <GlobalStyle />
-      <Header>
-        <LightToggle />
-      </Header>
-      <Input />
+      <Body isClicked={isClicked}>
+        <GlobalStyle />
+        <Header>
+          <LightToggle isClicked={isClicked} setisClicked={setisClicked} />
+        </Header>
+        <Input />
 
-      <Container>
-        <ContainersHeader />
-        <InformationBox />
-        <PrivateInformation />
-      </Container>
+        <Container>
+          <ContainersHeader />
+          <InformationBox />
+          <PrivateInformation />
+        </Container>
+      </Body>
     </>
   );
 }
+
+const Body = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Space Mono", monospace;
+  background: ${props => props.isClicked ? "#141D2F" : "#F6F8FF"};
+`;
 
 const Header = styled.div`
   display: flex;

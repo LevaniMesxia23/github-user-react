@@ -32,6 +32,7 @@ const Container = styled.div`
     border-radius: 0.9375rem;
     background: #fefefe;
     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+    border: none;
 
     color: #4b6a9b;
     font-size: 1.125rem;

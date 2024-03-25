@@ -15,5 +15,6 @@ export const GlobalStyle = createGlobalStyle`
     align-items: center;
     min-height: 100vh;
     font-family: "Space Mono", monospace;
+    background: #F6F8FF;
   }
 `;

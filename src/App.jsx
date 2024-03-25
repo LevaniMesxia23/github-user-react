@@ -5,6 +5,7 @@ import { GlobalStyle } from "./styles/GlobalStyles";
 import Input from "./components/Input";
 import ContainersHeader from "./components/ContainersHeader";
 import InformationBox from "./components/InformationBox";
+import PrivateInformation from "./components/PrivateInformation";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Container>
         <ContainersHeader />
         <InformationBox />
+        <PrivateInformation />
       </Container>
     </>
   );

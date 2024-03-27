@@ -14,10 +14,10 @@ function App() {
     <>
       <Body isClicked={isClicked}>
         <GlobalStyle />
-        <Header>
+        <Header isClicked={isClicked}>
           <LightToggle isClicked={isClicked} setisClicked={setisClicked} />
         </Header>
-        <Input />
+        <Input isClicked={isClicked} setisClicked={setisClicked} />
 
         <Container>
           <ContainersHeader />

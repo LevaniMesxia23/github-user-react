@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Search from "../../public/images/icon-search.svg";
 
-export default function Input() {
+export default function Input({ isClicked, setisClicked }) {
   return (
-    <Container>
+    <Container isClicked={isClicked}>
       <img src={Search} alt="" />
       <input type="text" placeholder="Search GitHub username…"/>
       <button>Search</button>
@@ -30,19 +30,18 @@ const Container = styled.div`
     height: 4.3125rem;
     flex-shrink: 0;
     border-radius: 0.9375rem;
-    background: #fefefe;
+    background: ${props => props.isClicked ? "#1E2A47" : "#fefefe" };
     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
     border: none;
     padding-left: 5rem;
 
-    color: #4B6A9B;
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5625rem;
   }
   input::placeholder{
-    color: #4B6A9B;
+    color: ${props => props.isClicked ? "#fefefe" : "#1E2A47" };
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;

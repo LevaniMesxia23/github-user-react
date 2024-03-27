@@ -4,9 +4,9 @@ import Sun from "../../public/images/icon-sun.svg";
 import styled from "styled-components";
 import { useState } from "react";
 
-export default function LightToggle({isClicked, setisClicked}) {
+export default function LightToggle({ isClicked, setisClicked }) {
   return (
-    <Header>
+    <Header isClicked={isClicked}>
       <p>devfinder</p>
       <div onClick={() => setisClicked(!isClicked)}>
         <span>{isClicked ? "Light" : "Dark"}</span>
@@ -16,7 +16,6 @@ export default function LightToggle({isClicked, setisClicked}) {
   );
 }
 
-
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
@@ -24,7 +23,7 @@ const Header = styled.div`
   gap: 31.5rem;
 
   p {
-    color: #222731;
+    color: ${(props) => (props.isClicked ? "#fff" : "#222731")};
     font-size: 1.625rem;
     font-style: normal;
     font-weight: 700;
@@ -38,7 +37,7 @@ const Header = styled.div`
     gap: 1rem;
 
     span {
-      color: #697c9a;
+      color: ${(props) => (props.isClicked ? "#fff" : "#697c9a" )};
       font-size: 0.8125rem;
       font-style: normal;
       font-weight: 700;

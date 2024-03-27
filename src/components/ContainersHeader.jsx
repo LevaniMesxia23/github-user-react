@@ -18,7 +18,7 @@ export default function ContainersHeader() {
         </TitleAndDate>
 
         <LinkBio>
-          <span className="link">octocat</span>
+          <span className="link">@octocat</span>
           <span className="bio">This profile has no bio</span>
         </LinkBio>
       </div>

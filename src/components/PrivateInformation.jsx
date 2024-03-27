@@ -5,9 +5,9 @@ import Website from "../../public/images/icon-website.svg";
 import Company from "../../public/images/icon-company.svg";
 import styled from "styled-components";
 
-export default function PrivateInformation() {
+export default function PrivateInformation({ isClicked, setisClicked }) {
   return (
-    <Container>
+    <Container isClicked={isClicked}>
       <div>
         <img src={Location} alt="" />
         <span>San Francisco</span>
@@ -40,21 +40,19 @@ const Container = styled.div`
   column-gap: 4.5rem auto;
   margin-top: 2.39rem;
 
-  div{
+  div {
     display: flex;
     align-items: center;
 
     img {
-    margin-right: 1rem;
-
-    span{
-      color: #4B6A9B;
+      margin-right: 1rem;
+    }
+    span {
+      color: ${(props) => (props.isClicked ? "#fff" : "#4B6A9B")};
       font-size: 0.9375rem;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
     }
   }
-  }
-  
 `;

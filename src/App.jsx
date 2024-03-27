@@ -22,7 +22,7 @@ function App() {
         <Container isClicked={isClicked}>
           <ContainersHeader isClicked={isClicked} setisClicked={setisClicked}/>
           <InformationBox isClicked={isClicked} setisClicked={setisClicked}/>
-          <PrivateInformation />
+          <PrivateInformation isClicked={isClicked} setisClicked={setisClicked}/>
         </Container>
       </Body>
     </>

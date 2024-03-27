@@ -19,9 +19,9 @@ function App() {
         </Header>
         <Input isClicked={isClicked} setisClicked={setisClicked} />
 
-        <Container>
-          <ContainersHeader />
-          <InformationBox />
+        <Container isClicked={isClicked}>
+          <ContainersHeader isClicked={isClicked} setisClicked={setisClicked}/>
+          <InformationBox isClicked={isClicked} setisClicked={setisClicked}/>
           <PrivateInformation />
         </Container>
       </Body>
@@ -49,7 +49,7 @@ const Container = styled.div`
   width: 45.625rem;
   flex-shrink: 0;
   border-radius: 0.9375rem;
-  background: #fefefe;
+  background: ${props => props.isClicked ? "#1E2A47" : "#fefefe"};
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
   margin-top: 1.5rem;
   padding: 3rem;

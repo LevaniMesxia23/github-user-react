@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function InformationBox() {
+export default function InformationBox({ isClicked, setisClicked }) {
   return (
-    <MainBox>
+    <MainBox isClicked={isClicked}>
       <div>
         <p>Repos</p>
         <span>8</span>
@@ -27,13 +27,13 @@ const MainBox = styled.div`
   height: 5.3125rem;
   flex-shrink: 0;
   border-radius: 0.625rem;
-  background: #f6f8ff;
+  background: ${(props) => (props.isClicked ? "#141D2F" : "#f6f8ff;")};
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 
   p {
-    color: #4b6a9b;
+    color: ${props => props.isClicked ? "#fff" : "#4b6a9b;"};
     font-size: 0.8125rem;
     font-style: normal;
     font-weight: 400;
@@ -41,7 +41,7 @@ const MainBox = styled.div`
     margin-bottom: 0.2rem;
   }
   span {
-    color: #2b3442;
+    color: ${props => props.isClicked ? "#fff" : "#2b3442;"};
     font-size: 1.375rem;
     font-style: normal;
     font-weight: 700;

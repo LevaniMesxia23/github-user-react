@@ -2,7 +2,7 @@ import React from "react";
 import ProfileImage from "../../public/images/profile-image.png";
 import styled from "styled-components";
 
-export default function ContainersHeader() {
+export default function ContainersHeader({ isClicked, setisClicked }) {
   return (
     <MainContainer>
       <div className="top-side">
@@ -12,12 +12,12 @@ export default function ContainersHeader() {
       </div>
 
       <div className="bottom-side">
-        <TitleAndDate>
+        <TitleAndDate isClicked={isClicked}>
           <span className="title">The Octocat </span>
           <span className="date">Joined 25 Jan 2011</span>
         </TitleAndDate>
 
-        <LinkBio>
+        <LinkBio isClicked={isClicked}>
           <span className="link">@octocat</span>
           <span className="bio">This profile has no bio</span>
         </LinkBio>
@@ -49,7 +49,7 @@ const TitleAndDate = styled.div`
   width: 93%;
 
   .title {
-    color: #2b3442;
+    color: ${(props) => (props.isClicked ? "#FFF" : "#2b3442")};
     font-size: 1.625rem;
     font-style: normal;
     font-weight: 700;
@@ -57,7 +57,7 @@ const TitleAndDate = styled.div`
   }
 
   .date {
-    color: #697c9a;
+    color: ${(props) => (props.isClicked ? "#FFF" : "#697C9A")};
     text-align: right;
     font-size: 0.9375rem;
     font-style: normal;
@@ -81,7 +81,7 @@ const LinkBio = styled.div`
   }
   .bio {
     width: 30rem;
-    color: #4b6a9b;
+    color: ${(props) => (props.isClicked ? "#FFF" : "#4B6A9B")};
     font-size: 0.9375rem;
     font-style: normal;
     font-weight: 400;

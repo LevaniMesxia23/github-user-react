@@ -3,34 +3,40 @@ import styled from "styled-components";
 import Search from "../../public/images/icon-search.svg";
 
 export default function Input({ isClicked, setisClicked }) {
-  const [search, setSearch] = [""];
+  const [search, setSearch] = ["octocat"];
   const [user, setUser] = useState(null);
+  const [count, setCount] = useState(0)
 
   useEffect(() => {
     async function fetchData() {
-      try{
-        const response = await fetch(`https://api.github.com/users/${search}`)
-        if(!response.ok){
-          throw new Error("User not found")
+      try {
+        const response = await fetch(`https://api.github.com/users/${search}`);
+        console.log(response.statusText)
+        if (!response.ok) {
+          throw new Error("User not found");
         }
-        const data = await response.json()
-        setUser(data)
-      } catch (error){
-        console.log("Error: ", error)
+        const data = await response.json();
+        setUser(data);
+      } catch (error) {
+        console.log("Error: ", error);
       }
-
     }
-  });
-  fetchData()
 
-  function handleSearch() {
-    
-  }
+
+    fetchData();
+  }, [count]);
+  
+
   return (
     <Container isClicked={isClicked}>
       <img src={Search} alt="" />
-      <input type="text" placeholder="Search GitHub username…" />
-      <button onClick={handleSearch}>Search</button>
+      <input
+        type="text"
+        placeholder="Search GitHub username…"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <button onClick={() => setCount(count + 1)}>Search</button>
     </Container>
   );
 }

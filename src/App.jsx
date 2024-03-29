@@ -27,7 +27,7 @@ function App() {
             user={user}
             setUser={setUser}
           />
-          <InformationBox isClicked={isClicked} setisClicked={setisClicked} />
+          <InformationBox isClicked={isClicked} setisClicked={setisClicked} user={user} setUser={setUser}/>
           <PrivateInformation
             isClicked={isClicked}
             setisClicked={setisClicked}

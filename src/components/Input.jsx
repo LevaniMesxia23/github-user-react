@@ -17,15 +17,15 @@ export default function Input({ isClicked, setisClicked, user, setUser }) {
         }
         const data = await response.json();
         console.log(data)
-        setUser(data);
+        setUser(data)
       } catch (error) {
         console.log("Error: ", error);
       }
     }
 
-
     fetchData();
   }, [count]);
+
   
 
   return (

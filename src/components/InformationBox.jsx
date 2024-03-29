@@ -1,22 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function InformationBox({ isClicked, setisClicked }) {
+export default function InformationBox({
+  isClicked,
+  setisClicked,
+  user,
+  setUser,
+}) {
   return (
-    <MainBox isClicked={isClicked}>
+    <MainBox isClicked={isClicked} user={user}>
       <div>
         <p>Repos</p>
-        <span>8</span>
+        <span>{user.public_repos}</span>
       </div>
 
       <div>
         <p>Followers</p>
-        <span>3938</span>
+        <span>{user.followers}</span>
       </div>
 
       <div>
         <p>Following</p>
-        <span>9</span>
+        <span>{user.following}</span>
       </div>
     </MainBox>
   );
@@ -33,7 +38,7 @@ const MainBox = styled.div`
   align-items: center;
 
   p {
-    color: ${props => props.isClicked ? "#fff" : "#4b6a9b;"};
+    color: ${(props) => (props.isClicked ? "#fff" : "#4b6a9b;")};
     font-size: 0.8125rem;
     font-style: normal;
     font-weight: 400;
@@ -41,7 +46,7 @@ const MainBox = styled.div`
     margin-bottom: 0.2rem;
   }
   span {
-    color: ${props => props.isClicked ? "#fff" : "#2b3442;"};
+    color: ${(props) => (props.isClicked ? "#fff" : "#2b3442;")};
     font-size: 1.375rem;
     font-style: normal;
     font-weight: 700;

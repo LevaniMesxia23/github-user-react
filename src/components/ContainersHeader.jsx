@@ -2,7 +2,12 @@ import React from "react";
 import ProfileImage from "../../public/images/profile-image.png";
 import styled from "styled-components";
 
-export default function ContainersHeader({ isClicked, setisClicked, user, setUser }) {
+export default function ContainersHeader({
+  isClicked,
+  setisClicked,
+  user,
+  setUser,
+}) {
   return (
     <MainContainer>
       <div className="top-side">
@@ -13,13 +18,13 @@ export default function ContainersHeader({ isClicked, setisClicked, user, setUse
 
       <div className="bottom-side">
         <TitleAndDate isClicked={isClicked} user={user}>
-          <span className="title">{user.login}</span>
+          <span className="title">{user.name}</span>
           <span className="date">{user.created_at}</span>
         </TitleAndDate>
 
         <LinkBio isClicked={isClicked}>
-          <span className="link">@octocat</span>
-          <span className="bio">This profile has no bio</span>
+          <span className="link">@{user.login}</span>
+          <span className="bio">{user.bio}</span>
         </LinkBio>
       </div>
     </MainContainer>
@@ -28,8 +33,6 @@ export default function ContainersHeader({ isClicked, setisClicked, user, setUse
 const MainContainer = styled.div`
   display: flex;
 
-  .top-side {
-  }
 `;
 const ImageBox = styled.div`
   display: inline;

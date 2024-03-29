@@ -37,20 +37,26 @@ const MainBox = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  p {
-    color: ${(props) => (props.isClicked ? "#fff" : "#4b6a9b;")};
-    font-size: 0.8125rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-bottom: 0.2rem;
-  }
-  span {
-    color: ${(props) => (props.isClicked ? "#fff" : "#2b3442;")};
-    font-size: 1.375rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    p {
+      color: ${(props) => (props.isClicked ? "#fff" : "#4b6a9b;")};
+      font-size: 0.8125rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 0.2rem;
+    }
+    span {
+      color: ${(props) => (props.isClicked ? "#fff" : "#2b3442;")};
+      font-size: 1.375rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+    }
   }
 `;

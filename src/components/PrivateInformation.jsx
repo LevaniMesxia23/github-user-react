@@ -15,22 +15,26 @@ export default function PrivateInformation({
     <Container isClicked={isClicked} user={user}>
       <div>
         <img src={Location} alt="" />
-        <span>{user.location}</span>
+        <span>{user.location === null ? "Not Available" : user.location}</span>
       </div>
 
       <div>
         <img src={Twitter} alt="" />
-        <span>{user.twitter_username}</span>
+        <span>
+          {user.twitter_username === null
+            ? "Not Available"
+            : user.twitter_username}
+        </span>
       </div>
 
       <div>
         <img src={Website} alt="" />
-        <span>{user.html_url}</span>
+        <span>{user.html_url === null ? "Not Available" : user.html_url}</span>
       </div>
 
       <div>
         <img src={Company} alt="" />
-        <span>{user.company}</span>
+        <span>{user.company === null ? "Not Available" : user.company}</span>
       </div>
     </Container>
   );

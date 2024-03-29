@@ -18,7 +18,12 @@ function App() {
         <Header isClicked={isClicked}>
           <LightToggle isClicked={isClicked} setisClicked={setisClicked} />
         </Header>
-        <Input isClicked={isClicked} setisClicked={setisClicked} user={user} setUser={setUser}/>
+        <Input
+          isClicked={isClicked}
+          setisClicked={setisClicked}
+          user={user}
+          setUser={setUser}
+        />
 
         <Container isClicked={isClicked} user={user} setUser={setUser}>
           <ContainersHeader
@@ -27,10 +32,17 @@ function App() {
             user={user}
             setUser={setUser}
           />
-          <InformationBox isClicked={isClicked} setisClicked={setisClicked} user={user} setUser={setUser}/>
+          <InformationBox
+            isClicked={isClicked}
+            setisClicked={setisClicked}
+            user={user}
+            setUser={setUser}
+          />
           <PrivateInformation
             isClicked={isClicked}
             setisClicked={setisClicked}
+            user={user}
+            setUser={setUser}
           />
         </Container>
       </Body>

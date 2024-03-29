@@ -5,27 +5,32 @@ import Website from "../../public/images/icon-website.svg";
 import Company from "../../public/images/icon-company.svg";
 import styled from "styled-components";
 
-export default function PrivateInformation({ isClicked, setisClicked }) {
+export default function PrivateInformation({
+  isClicked,
+  setisClicked,
+  user,
+  setUser,
+}) {
   return (
-    <Container isClicked={isClicked}>
+    <Container isClicked={isClicked} user={user}>
       <div>
         <img src={Location} alt="" />
-        <span>San Francisco</span>
+        <span>{user.location}</span>
       </div>
 
       <div>
         <img src={Twitter} alt="" />
-        <span>Not Available</span>
+        <span>{user.twitter_username}</span>
       </div>
 
       <div>
         <img src={Website} alt="" />
-        <span>https://github.blog</span>
+        <span>{user.html_url}</span>
       </div>
 
       <div>
         <img src={Company} alt="" />
-        <span>@github</span>
+        <span>{user.company}</span>
       </div>
     </Container>
   );
@@ -53,6 +58,7 @@ const Container = styled.div`
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      margin-right: 1rem;
     }
   }
 `;

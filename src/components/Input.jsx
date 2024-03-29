@@ -69,6 +69,7 @@ const Container = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 1.5625rem;
+    color: ${props => props.isClicked ? "#fff" :"#4B6A9B"};
   }
   input::placeholder {
     color: ${(props) => (props.isClicked ? "#fefefe" : "#1E2A47")};

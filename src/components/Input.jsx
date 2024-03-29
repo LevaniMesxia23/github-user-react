@@ -4,20 +4,19 @@ import Search from "../../public/images/icon-search.svg";
 
 export default function Input({ isClicked, setisClicked, user, setUser }) {
   const [search, setSearch] = useState("LevaniMesxia23");
+  const [count, setCount] = useState(0);
 
-  const [count, setCount] = useState(0)
-  
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await fetch(`https://api.github.com/users/${search}`);
-        console.log(response.statusText)
         if (!response.ok) {
           throw new Error("User not found");
         }
         const data = await response.json();
-        console.log(data)
-        setUser(data)
+        console.log(data);
+        setUser(data);
+        setSearch(() => "")
       } catch (error) {
         console.log("Error: ", error);
       }
@@ -25,8 +24,6 @@ export default function Input({ isClicked, setisClicked, user, setUser }) {
 
     fetchData();
   }, [count]);
-
-  
 
   return (
     <Container isClicked={isClicked}>
@@ -69,7 +66,7 @@ const Container = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 1.5625rem;
-    color: ${props => props.isClicked ? "#fff" :"#4B6A9B"};
+    color: ${(props) => (props.isClicked ? "#fff" : "#4B6A9B")};
   }
   input::placeholder {
     color: ${(props) => (props.isClicked ? "#fefefe" : "#1E2A47")};

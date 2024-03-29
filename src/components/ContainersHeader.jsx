@@ -2,7 +2,7 @@ import React from "react";
 import ProfileImage from "../../public/images/profile-image.png";
 import styled from "styled-components";
 
-export default function ContainersHeader({ isClicked, setisClicked }) {
+export default function ContainersHeader({ isClicked, setisClicked, user, setUser }) {
   return (
     <MainContainer>
       <div className="top-side">
@@ -12,9 +12,9 @@ export default function ContainersHeader({ isClicked, setisClicked }) {
       </div>
 
       <div className="bottom-side">
-        <TitleAndDate isClicked={isClicked}>
-          <span className="title">The Octocat </span>
-          <span className="date">Joined 25 Jan 2011</span>
+        <TitleAndDate isClicked={isClicked} user={user}>
+          <span className="title">{user.login}</span>
+          <span className="date">{user.created_at}</span>
         </TitleAndDate>
 
         <LinkBio isClicked={isClicked}>

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Search from "../../public/images/icon-search.svg";
 
-export default function Input({ isClicked, setisClicked }) {
-  const [search, setSearch] = ["octocat"];
-  const [user, setUser] = useState(null);
-  const [count, setCount] = useState(0)
+export default function Input({ isClicked, setisClicked, user, setUser }) {
+  const [search, setSearch] = useState("LevaniMesxia23");
 
+  const [count, setCount] = useState(0)
+  
   useEffect(() => {
     async function fetchData() {
       try {
@@ -16,6 +16,7 @@ export default function Input({ isClicked, setisClicked }) {
           throw new Error("User not found");
         }
         const data = await response.json();
+        console.log(data)
         setUser(data);
       } catch (error) {
         console.log("Error: ", error);

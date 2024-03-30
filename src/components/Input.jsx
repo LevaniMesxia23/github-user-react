@@ -5,6 +5,7 @@ import Search from "../../public/images/icon-search.svg";
 export default function Input({ isClicked, setisClicked, user, setUser }) {
   const [search, setSearch] = useState("LevaniMesxia23");
   const [count, setCount] = useState(0);
+  const [error, setError] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -16,7 +17,7 @@ export default function Input({ isClicked, setisClicked, user, setUser }) {
         const data = await response.json();
         console.log(data);
         setUser(data);
-        setSearch(() => "")
+        setSearch(() => "");
       } catch (error) {
         console.log("Error: ", error);
       }
@@ -24,6 +25,8 @@ export default function Input({ isClicked, setisClicked, user, setUser }) {
 
     fetchData();
   }, [count]);
+
+  
 
   return (
     <Container isClicked={isClicked}>
@@ -34,6 +37,9 @@ export default function Input({ isClicked, setisClicked, user, setUser }) {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+      <span className="error">
+        {() => (setError(!error) ? "No results" : "")}
+      </span>
       <button onClick={() => setCount(count + 1)}>Search</button>
     </Container>
   );
@@ -74,6 +80,16 @@ const Container = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 1.5625rem;
+  }
+
+  .error {
+    position: absolute;
+    right: 8.755rem;
+    color: #f74646;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
 
   button {

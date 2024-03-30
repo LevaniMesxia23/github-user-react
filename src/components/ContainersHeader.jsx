@@ -8,15 +8,13 @@ export default function ContainersHeader({
   user,
   setUser,
 }) {
-
-  function dateChanged(date){
-    const dateObj = new Date(date)
-    const dateString = dateObj.toDateString()
-    const [weekday, month, day, year] = dateString.split(" ")
-    return `${day} ${month} ${year}`
-    
+  function dateChanged(date) {
+    const dateObj = new Date(date);
+    const dateString = dateObj.toDateString();
+    const [weekday, month, day, year] = dateString.split(" ");
+    return `${day} ${month} ${year}`;
   }
-  const date = dateChanged(user.created_at)
+  const date = dateChanged(user.created_at);
   return (
     <MainContainer>
       <div className="top-side">
@@ -28,7 +26,7 @@ export default function ContainersHeader({
       <div className="bottom-side">
         <TitleAndDate isClicked={isClicked} user={user}>
           <span className="title">{user.name}</span>
-          <span className="date">{date}</span>
+          <span className="date">joined {date}</span>
         </TitleAndDate>
 
         <LinkBio isClicked={isClicked}>

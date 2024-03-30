@@ -77,6 +77,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @media(max-width: 767px) {
+    width: 20.4375rem;
+    height: 32.3125rem;
+    flex-shrink: 0;
+  }
 `;
 
 export default App;

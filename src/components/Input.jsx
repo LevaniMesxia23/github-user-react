@@ -121,4 +121,35 @@ const Container = styled.div`
   button:hover {
     background: #60abff;
   }
+
+  @media (max-width: 767px) {
+    img {
+      left: 1rem;
+      top: 1.6rem;
+      width: 1.253rem;
+      height: 1.25rem;
+      flex-shrink: 0;
+    }
+    input {
+      width: 20.4375rem;
+      flex-shrink: 0;
+      padding-left: 2.81rem;
+    }
+    input::placeholder {
+      width: 11.5rem;
+      color: #4b6a9b;
+      font-size: 0.8125rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 192.308%;
+    }
+    button {
+      width: 5.25rem;
+      height: 2.875rem;
+      flex-shrink: 0;
+      font-size: 0.875rem;
+      right: 0.44rem;
+      top: 0.7rem;
+    }
+  }
 `;

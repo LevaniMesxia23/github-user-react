@@ -26,7 +26,16 @@ export default function Input({ isClicked, setisClicked, user, setUser }) {
     fetchData();
   }, [count]);
 
-  
+
+  function handleSearch(){
+    setCount(count + 1)
+  }
+
+  function handleKeyPress(){
+    if (event.key === 'Enter') {
+      handleSearch()
+    }
+  };
 
   return (
     <Container isClicked={isClicked}>
@@ -34,13 +43,14 @@ export default function Input({ isClicked, setisClicked, user, setUser }) {
       <input
         type="text"
         placeholder="Search GitHub username…"
+        onKeyPress={handleKeyPress}
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
       <span className="error">
         {() => (setError(!error) ? "No results" : "")}
       </span>
-      <button onClick={() => setCount(count + 1)}>Search</button>
+      <button onClick={handleSearch}>Search</button>
     </Container>
   );
 }

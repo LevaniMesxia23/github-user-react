@@ -14,9 +14,12 @@ export default function LightToggle({ isClicked, setisClicked }) {
   // function mouseLeave(){
   //   setHovered(true)
   // }
+  function handleReload(){
+    window.location.reload()
+  }
   return (
     <Header isClicked={isClicked}>
-      <p>devfinder</p>
+      <p onClick={handleReload}>devfinder</p>
       <div onClick={() => setisClicked(!isClicked)}>
         <span>{isClicked ? "Light" : "Dark"}</span>
         <img src={isClicked ? Sun : Moon} alt="" />
@@ -37,6 +40,7 @@ const Header = styled.div`
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    cursor: pointer;
   }
 
   div {

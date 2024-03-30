@@ -1,10 +1,19 @@
 import React from "react";
 import Moon from "../../public/images/icon-moon.svg";
+import BlackMoon from "../../public/images/moon.svg"
 import Sun from "../../public/images/icon-sun.svg";
 import styled from "styled-components";
 import { useState } from "react";
 
 export default function LightToggle({ isClicked, setisClicked }) {
+  // const [hovered, setHovered] = useState(true)
+
+  // function mouseEnter(){
+  //   setHovered(false)
+  // }
+  // function mouseLeave(){
+  //   setHovered(true)
+  // }
   return (
     <Header isClicked={isClicked}>
       <p>devfinder</p>
@@ -35,9 +44,9 @@ const Header = styled.div`
     justify-content: center;
     align-items: center;
     gap: 1rem;
-
+    
     span {
-      color: ${(props) => (props.isClicked ? "#fff" : "#697c9a" )};
+      color: ${(props) => (props.isClicked ? "#fff" : "#697c9a")};
       font-size: 0.8125rem;
       font-style: normal;
       font-weight: 700;
@@ -51,5 +60,17 @@ const Header = styled.div`
       height: 1.25rem;
       cursor: pointer;
     }
+    div:hover {
+      color: ${props => props.isClicked ? "#90A4D4" : "black"};
+    }
+    &:hover {
+    cursor: pointer;
+    
+    span {
+      color: ${(props) => (props.isClicked ? "#90A4D4" : "black")};
+    }
+
   }
+  }
+  
 `;

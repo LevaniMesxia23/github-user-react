@@ -5,8 +5,7 @@ import Search from "../../public/images/icon-search.svg";
 export default function Input({ isClicked, setisClicked, user, setUser }) {
   const [search, setSearch] = useState("LevaniMesxia23");
   const [count, setCount] = useState(0);
-  const [error, setError] = useState(true);
-
+  const [error, setError] = useState(false);
   useEffect(() => {
     async function fetchData() {
       try {
@@ -17,25 +16,26 @@ export default function Input({ isClicked, setisClicked, user, setUser }) {
         const data = await response.json();
         console.log(data);
         setUser(data);
+        setError(false);
         setSearch(() => "");
       } catch (error) {
         console.log("Error: ", error);
+        setError(true);
       }
     }
 
     fetchData();
   }, [count]);
 
-
-  function handleSearch(){
-    setCount(count + 1)
+  function handleSearch() {
+    setCount(count + 1);
   }
 
-  function handleKeyPress(){
-    if (event.key === 'Enter') {
-      handleSearch()
+  function handleKeyPress() {
+    if (event.key === "Enter") {
+      handleSearch();
     }
-  };
+  }
 
   return (
     <Container isClicked={isClicked}>
@@ -47,9 +47,7 @@ export default function Input({ isClicked, setisClicked, user, setUser }) {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <span className="error">
-        {() => (setError(!error) ? "No results" : "")}
-      </span>
+      <span className="error">{error ? "No results" : ""}</span>
       <button onClick={handleSearch}>Search</button>
     </Container>
   );
@@ -119,5 +117,8 @@ const Container = styled.div`
     font-weight: 700;
     line-height: normal;
     cursor: pointer;
+  }
+  button:hover {
+    background: #60abff;
   }
 `;

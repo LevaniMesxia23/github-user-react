@@ -29,9 +29,7 @@ export default function PrivateInformation({
 
       <div>
         <img src={Website} alt="" />
-        <a href={user.html_url} target="_blanck">
-          {user.html_url === null ? "Not Available" : user.html_url}
-        </a>
+        <a href={user.html_url} target="_blanck">{user.html_url === null ? "Not Available" : user.html_url}</a>
       </div>
 
       <div>
@@ -67,7 +65,7 @@ const Container = styled.div`
       margin-right: 1rem;
     }
 
-    a {
+    a{
       color: ${(props) => (props.isClicked ? "#fff" : "#4B6A9B")};
       font-size: 0.9375rem;
       font-style: normal;
@@ -75,6 +73,9 @@ const Container = styled.div`
       line-height: normal;
       margin-right: 1rem;
       text-decoration: none;
+    }
+    a:hover{
+      text-decoration: underline;
     }
   }
 `;

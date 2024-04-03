@@ -1,19 +1,10 @@
 import React from "react";
 import Moon from "../../public/images/icon-moon.svg";
-import BlackMoon from "../../public/images/moon.svg"
 import Sun from "../../public/images/icon-sun.svg";
 import styled from "styled-components";
 import { useState } from "react";
 
 export default function LightToggle({ isClicked, setisClicked }) {
-  // const [hovered, setHovered] = useState(true)
-
-  // function mouseEnter(){
-  //   setHovered(false)
-  // }
-  // function mouseLeave(){
-  //   setHovered(true)
-  // }
   function handleReload(){
     window.location.reload()
   }
@@ -73,7 +64,6 @@ const Header = styled.div`
     span {
       color: ${(props) => (props.isClicked ? "#90A4D4" : "black")};
     }
-
   }
   }
   

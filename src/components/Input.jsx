@@ -122,7 +122,7 @@ const Container = styled.div`
     background: #60abff;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     img {
       left: 1rem;
       top: 1.6rem;

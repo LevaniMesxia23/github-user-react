@@ -15,12 +15,12 @@ export default function PrivateInformation({
     <Container isClicked={isClicked} user={user}>
       <div>
         <img src={Location} alt="" />
-        <span>{user.location === null ? "Not Available" : user.location}</span>
+        <span className={user.location === null ? "not-available" : ""}>{user.location === null ? "Not Available" : user.location}</span>
       </div>
 
       <div>
         <img src={Twitter} alt="" />
-        <span>
+        <span className={user.twitter_username === null ? "not-available" : ""}>
           {user.twitter_username === null
             ? "Not Available"
             : user.twitter_username}
@@ -29,12 +29,14 @@ export default function PrivateInformation({
 
       <div>
         <img src={Website} alt="" />
-        <a href={user.html_url} target="_blanck">{user.html_url === null ? "Not Available" : user.html_url}</a>
+        <a href={user.html_url} target="_blanck" className={user.html_url === null ? "not-available" : ""}>
+          {user.html_url === null ? "Not Available" : user.html_url}
+        </a>
       </div>
 
       <div>
         <img src={Company} alt="" />
-        <span>{user.company === null ? "Not Available" : user.company}</span>
+        <span className={user.company === null ? "not-available" : ""}>{user.company === null ? "Not Available" : user.company}</span>
       </div>
     </Container>
   );
@@ -65,7 +67,7 @@ const Container = styled.div`
       margin-right: 1rem;
     }
 
-    a{
+    a {
       color: ${(props) => (props.isClicked ? "#fff" : "#4B6A9B")};
       font-size: 0.9375rem;
       font-style: normal;
@@ -73,8 +75,12 @@ const Container = styled.div`
       line-height: normal;
       margin-right: 1rem;
       text-decoration: none;
+
+      .not-available{
+        opacity: 0.5;
+      }
     }
-    a:hover{
+    a:hover {
       text-decoration: underline;
     }
   }

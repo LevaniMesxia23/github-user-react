@@ -1,5 +1,4 @@
 import React from "react";
-import ProfileImage from "../../public/images/profile-image.png";
 import styled from "styled-components";
 
 export default function ContainersHeader({

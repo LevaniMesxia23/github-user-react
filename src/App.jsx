@@ -67,8 +67,9 @@ const Header = styled.div`
 `;
 
 const Container = styled.div`
-  width: 45.625rem;
-  flex-shrink: 0;
+  width: 100%;
+  max-width: 45.625rem;
+  margin: 0 auto;
   border-radius: 0.9375rem;
   background: ${(props) => (props.isClicked ? "#1E2A47" : "#fefefe")};
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
@@ -77,12 +78,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
-  @media(max-width: 767px) {
-    width: 20.4375rem;
-    height: 32.3125rem;
-    flex-shrink: 0;
-  }
 `;
 
 export default App;
